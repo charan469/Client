@@ -1,4 +1,4 @@
-package com.moneyMax.client.repository;
+package com.moneymax.client.repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.moneyMax.client.model.ClientRegistrationModel;
+import com.moneymax.client.model.ClientRegistrationModel;
 
 @Repository
 public class ClientRepository {

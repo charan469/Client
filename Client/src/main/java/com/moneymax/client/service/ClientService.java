@@ -1,9 +1,9 @@
-package com.moneyMax.client.service;
+package com.moneymax.client.service;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.moneyMax.client.model.ClientRegistrationModel;
+import com.moneymax.client.model.ClientRegistrationModel;
 
 
 

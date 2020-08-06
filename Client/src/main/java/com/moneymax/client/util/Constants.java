@@ -1,4 +1,4 @@
-package com.moneyMax.client.util;
+package com.moneymax.client.util;
 
 public class Constants {
 	

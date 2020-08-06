@@ -1,13 +1,13 @@
-package com.moneyMax.client.service;
+package com.moneymax.client.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.moneyMax.client.model.ClientRegistrationModel;
-import com.moneyMax.client.repository.ClientRepository;
-import com.moneyMax.client.util.Constants;
+import com.moneymax.client.model.ClientRegistrationModel;
+import com.moneymax.client.repository.ClientRepository;
+import com.moneymax.client.util.Constants;
 
 
 @org.springframework.stereotype.Service

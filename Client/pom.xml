@@ -8,7 +8,7 @@
 		<version>2.3.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.moneyMax.client</groupId>
+	<groupId>com.moneymax.client</groupId>
 	<artifactId>Client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Client</name>

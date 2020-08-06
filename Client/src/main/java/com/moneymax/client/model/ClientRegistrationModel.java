@@ -1,4 +1,4 @@
-package com.moneyMax.client.model;
+package com.moneymax.client.model;
 
 import java.sql.Timestamp;
 

@@ -1,4 +1,4 @@
-package com.moneyMax.client;
+package com.moneymax.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
