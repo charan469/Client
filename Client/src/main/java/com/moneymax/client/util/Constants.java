@@ -26,5 +26,33 @@ public class Constants {
 	public static final String DELETE_SUCCESS = "STS010";
 	public static final String DELETE_SUCCESS_MSG = "Deleted Successfully";
 	
+	public static final String DUPLICATE_SEQ_NO = "STS011";
+	public static final String DUPLICATE_SEQ_NO_MSG = "Sequence Number Already Exists";
+	
+	public static final String INVALID_SEQ_NO = "STS012";
+	public static final String INVALID_SEQ_NO_MSG = "Invalid Sequence Number";
+		
+	public static final String INVALID_GUID = "STS013";
+	public static final String INVALID_GUID_MSG = "Invalid GUID";
+	
+	
+	
+	
+//	public static final String SUCCESS = "STS001";
+//	public static final String SUCCESS_MSG = "Successful";
+//		
+//	public static final String FAILED = "STS002";
+//	public static final String FAILED_MSG = "Failed - Invalid Credentials";
+//		
+//	public static final String DUPLICATE_SEQ_NO = "STS003";
+//	public static final String DUPLICATE_SEQ_NO_MSG = "Sequence Number Already Exists";
+//	
+//	public static final String INVALID_SEQ_NO = "STS004";
+//	public static final String INVALID_SEQ_NO_MSG = "Invalid Sequence Number";
+//		
+//	public static final String INVALID_GUID = "STS005";
+//	public static final String INVALID_GUID_MSG = "Invalid GUID";
+
+	
 
 }
