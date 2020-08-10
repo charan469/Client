@@ -7,7 +7,7 @@ public class ClientEntityModel
 	private String mappedEntityID;
 	private String mappedAccountCurrency;
 	private String mappedAccountReference;
-	private String updateDateTime;
+	private String createDateTime;
 	private String lastModifiedDateTime;
 	private String status;
 	private String message;
@@ -53,13 +53,13 @@ public class ClientEntityModel
 	{
 		this.mappedAccountReference = mappedAccountReference;
 	}
-	public String getUpdateDateTime() 
+	public String getCreateDateTime() 
 	{
-		return updateDateTime;
+		return createDateTime;
 	}
-	public void setUpdateDateTime(String updateDateTime) 
+	public void setCreateDateTime(String createDateTime) 
 	{
-		this.updateDateTime = updateDateTime;
+		this.createDateTime = createDateTime;
 	}
 	public String getLastModifiedDateTime() 
 	{

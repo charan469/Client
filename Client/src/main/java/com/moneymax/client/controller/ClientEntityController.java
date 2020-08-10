@@ -16,7 +16,7 @@ import com.moneymax.client.service.ClientEntityService;
 
 
 @RestController
-@RequestMapping(path="/client")
+@RequestMapping(path="/clientEntity")
 @CrossOrigin(origins="*")
 public class ClientEntityController 
 {
@@ -36,29 +36,30 @@ public class ClientEntityController
     	return clientEntityService.findClient(clientEntityModel);
     }
     
-    @PostMapping(path="/signin")
-    public ClientEntityModel signIn(@RequestBody final ClientEntityModel clientEntityModel)
-    {
-    	return clientEntityService.signInClient(clientEntityModel);
-    }
-	
-	@PostMapping(path="/signup")
-	public ClientEntityModel signUp(@RequestBody final ClientEntityModel clientEntityModel)
-    {
-		return clientEntityService.signUpClient(clientEntityModel);
-    }
-    
-    @PostMapping(path="/update")
+    @PostMapping(path="/link")
     public ClientEntityModel update(@RequestBody final ClientEntityModel clientEntityModel)
     {
     	return clientEntityService.updateClient(clientEntityModel);
     }
+   
+}
     
-    @PostMapping(path="/delete")
-    public ClientEntityModel delete(@RequestBody final ClientEntityModel clientEntityModel)
-    {
-    	return clientEntityService.deleteClient(clientEntityModel);
-    }
+//    @PostMapping(path="/signin")
+//    public ClientEntityModel signIn(@RequestBody final ClientEntityModel clientEntityModel)
+//    {
+//    	return clientEntityService.signInClient(clientEntityModel);
+//    }
+//	
+//	  @PostMapping(path="/signup")
+//	  public ClientEntityModel signUp(@RequestBody final ClientEntityModel clientEntityModel)
+//    {
+//		return clientEntityService.signUpClient(clientEntityModel);
+//    }
+//    
+//    @PostMapping(path="/delete")
+//    public ClientEntityModel delete(@RequestBody final ClientEntityModel clientEntityModel)
+//    {
+//    	return clientEntityService.deleteClient(clientEntityModel);
+//    }
     
 
-}

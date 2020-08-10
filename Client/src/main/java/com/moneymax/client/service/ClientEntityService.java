@@ -11,12 +11,12 @@ public interface ClientEntityService
 
 	Optional<ClientEntityModel> findClient(ClientEntityModel clientEntityModel);
 	
-	ClientEntityModel signInClient(ClientEntityModel clientEntityModel);
-
-	ClientEntityModel signUpClient(ClientEntityModel clientEntityModel);
-
 	ClientEntityModel updateClient(ClientEntityModel clientEntityModel);
-    
-	ClientEntityModel deleteClient(ClientEntityModel clientEntityModel);
+	
+//	ClientEntityModel signInClient(ClientEntityModel clientEntityModel);
+//
+//	ClientEntityModel signUpClient(ClientEntityModel clientEntityModel);
+//    
+//	ClientEntityModel deleteClient(ClientEntityModel clientEntityModel);
 
 }
