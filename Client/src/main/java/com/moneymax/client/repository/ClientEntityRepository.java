@@ -50,19 +50,44 @@ public class ClientEntityRepository
 		return jdbcTemplate.query("SELECT * FROM ClientEntity", new ClientRowMapper());
 	}
 	
-	public Optional<ClientEntityModel> find(ClientEntityModel clientEntityModel) 
+	public ClientEntityModel find(ClientEntityModel clientEntityModel) 
 	{
-		return Optional.of(jdbcTemplate.queryForObject("SELECT * FROM ClientEntity WHERE ClientEntitySeqNo=?", new Object[] {clientEntityModel.getClientEntitySeqNo()}, new BeanPropertyRowMapper<ClientEntityModel>(ClientEntityModel.class)));
+		return jdbcTemplate.queryForObject("SELECT * FROM ClientEntity WHERE ClientEntitySeqNo=?", new Object[] {clientEntityModel.getClientEntitySeqNo()}, new BeanPropertyRowMapper<ClientEntityModel>(ClientEntityModel.class));
 	}
+	
+	public int insert(ClientEntityModel clientEntityModel) 
+	{
+		int count = 0;
+		try
+		{	
+			SimpleDateFormat formatter = new SimpleDateFormat("DD-MM-YYYY hh:mm:ss");
+			
+			Date createDateTime = new Date(System.currentTimeMillis());
+			System.out.println(formatter.format(createDateTime));
+			
+			count = jdbcTemplate.update("INSERT INTO ClientEntity(ClientEntitySeqNo, ClientGUID, MappedEntityID, MappedAccountCurrency, MappedAccountReference, CreateDateTime) VALUES(?, ?, ?, ?, ?, ?)",
+					new Object[] {clientEntityModel.getClientEntitySeqNo(), clientEntityModel.getClientGUID(), clientEntityModel.getMappedEntityID(), clientEntityModel.getMappedAccountCurrency(), clientEntityModel.getMappedAccountReference(), createDateTime});
+		}
+		catch(DuplicateKeyException dke)
+		{
+			count=-1;
+			dke.printStackTrace();
+		}
+		catch(Exception ex)
+		{
+			count=0;
+			ex.printStackTrace();
+		}
+		return count;
+	
+	}
+
 	
 	public int update(ClientEntityModel clientEntityModel)
 	{
 		int count=0;
 		try
-		{
-			//Date updateDateTime = df.parse(ClientEntityModel.getUpdateDateTime());
-			//Date lastModifiedDateTime = df.parse(ClientEntityModel.getLastModifiedDateTime());
-			
+		{	
             SimpleDateFormat formatter = new SimpleDateFormat("DD-MM-YYYY hh:mm:ss");
 			
 			Date lastModifiedDateTime = new Date(System.currentTimeMillis());
@@ -101,37 +126,6 @@ public class ClientEntityRepository
 //		return carrier;
 //	}
 //	
-//	public int signUp(ClientEntityModel clientEntityModel) 
-//	{
-//		//DateFormat df = new SimpleDateFormat("DD-MM-YYYY");
-//	
-//		int count = 0;
-//		try
-//		{
-//			//Date updateDateTime = df.parse(Client_Model.getUpdateDateTime());
-//			//Date lastModifiedDateTime = df.parse(Client_Model.getLastModifiedDateTime());
-//			
-//			SimpleDateFormat formatter = new SimpleDateFormat("DD-MM-YYYY hh:mm:ss");
-//			
-//			Date createDateTime = new Date(System.currentTimeMillis());
-//			System.out.println(formatter.format(createDateTime));
-//			
-//			count = jdbcTemplate.update("INSERT INTO ClientEntity(ClientEntitySeqNo, ClientGUID, MappedEntityID, MappedAccountCurrency, MappedAccountReference, CreateDateTime) VALUES(?, ?, ?, ?, ?, ?)",
-//					new Object[] {clientEntityModel.getClientEntitySeqNo(), clientEntityModel.getClientGUID(), clientEntityModel.getMappedEntityID(), clientEntityModel.getMappedAccountCurrency(), clientEntityModel.getMappedAccountReference(), createDateTime});
-//		}
-//		catch(DuplicateKeyException dke)
-//		{
-//			count=-1;
-//			dke.printStackTrace();
-//		}
-//		catch(Exception ex)
-//		{
-//			count=0;
-//			ex.printStackTrace();
-//		}
-//		return count;
-//	
-//	}
 //	
 //	public int delete(ClientEntityModel clientEntityModel) 
 //	{

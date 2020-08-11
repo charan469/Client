@@ -31,12 +31,18 @@ public class ClientEntityController
     }
     
     @PostMapping(path="/find")
-    public Optional<ClientEntityModel> find(@RequestBody final ClientEntityModel clientEntityModel)
+    public ClientEntityModel find(@RequestBody final ClientEntityModel clientEntityModel)
     {
     	return clientEntityService.findClient(clientEntityModel);
     }
     
-    @PostMapping(path="/link")
+	@PostMapping(path="/insert")
+	public ClientEntityModel insert(@RequestBody final ClientEntityModel clientEntityModel)
+    {
+	    return clientEntityService.insertClient(clientEntityModel);
+    }
+    
+    @PostMapping(path="/update")
     public ClientEntityModel update(@RequestBody final ClientEntityModel clientEntityModel)
     {
     	return clientEntityService.updateClient(clientEntityModel);
@@ -50,11 +56,6 @@ public class ClientEntityController
 //    	return clientEntityService.signInClient(clientEntityModel);
 //    }
 //	
-//	  @PostMapping(path="/signup")
-//	  public ClientEntityModel signUp(@RequestBody final ClientEntityModel clientEntityModel)
-//    {
-//		return clientEntityService.signUpClient(clientEntityModel);
-//    }
 //    
 //    @PostMapping(path="/delete")
 //    public ClientEntityModel delete(@RequestBody final ClientEntityModel clientEntityModel)

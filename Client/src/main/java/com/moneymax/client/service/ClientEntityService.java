@@ -9,14 +9,14 @@ public interface ClientEntityService
 {
 	List<ClientEntityModel> getClient();
 
-	Optional<ClientEntityModel> findClient(ClientEntityModel clientEntityModel);
+	ClientEntityModel findClient(ClientEntityModel clientEntityModel);
+	
+	ClientEntityModel insertClient(ClientEntityModel clientEntityModel);
 	
 	ClientEntityModel updateClient(ClientEntityModel clientEntityModel);
 	
 //	ClientEntityModel signInClient(ClientEntityModel clientEntityModel);
-//
-//	ClientEntityModel signUpClient(ClientEntityModel clientEntityModel);
-//    
+	
 //	ClientEntityModel deleteClient(ClientEntityModel clientEntityModel);
 
 }
